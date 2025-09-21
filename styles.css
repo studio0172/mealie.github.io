@@ -1445,6 +1445,61 @@ body {
     font-size: 14px;
 }
 
+/* Footer Styles */
+.main-footer {
+    background: linear-gradient(180deg, #0a0a0a 0%, #000000 100%);
+    border-top: 1px solid rgba(253, 107, 37, 0.1);
+    padding: 40px 0;
+    margin-top: 80px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-logo h3 {
+    color: #FD6B25;
+    font-family: 'GeistSans', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0 0 4px 0;
+    letter-spacing: 0.05em;
+}
+
+.footer-logo p {
+    color: #888;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.footer-status p {
+    color: #666;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    margin: 0;
+}
+
+/* Footer Responsive */
+@media (max-width: 768px) {
+    .main-footer {
+        padding: 30px 0;
+        margin-top: 60px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
+}
+
 /* Mobile Responsive for App Mockups */
 @media (max-width: 768px) {
     .recipe-sections {
