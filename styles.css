@@ -4,10 +4,15 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     min-height: 100vh;
     background: #000000;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    overflow-x: hidden;
 }
 
 .floating-header {
@@ -223,6 +228,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    perspective: 1200px;
+    transform-style: preserve-3d;
 }
 
 /* Desktop/Browser Mockup */
@@ -231,15 +238,29 @@ body {
     border-radius: 16px;
     overflow: hidden;
     box-shadow:
-        0 40px 80px rgba(0, 0, 0, 0.6),
         0 20px 40px rgba(0, 0, 0, 0.4),
+        0 10px 20px rgba(0, 0, 0, 0.3),
+        0 5px 10px rgba(0, 0, 0, 0.2),
         inset 0 1px 0 rgba(255, 255, 255, 0.1),
-        inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+        inset 0 0 0 1px rgba(253, 107, 37, 0.1);
     border: 1px solid rgba(253, 107, 37, 0.3);
     width: 900px;
     height: 600px;
     max-width: 100%;
-    transform: perspective(1000px) rotateX(5deg);
+    position: relative;
+    transform: perspective(1000px) rotateX(2deg) translateY(-8px);
+    transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+    will-change: transform;
+}
+
+.browser-mockup:hover {
+    transform: perspective(1000px) rotateX(5deg) translateY(-12px);
+    box-shadow:
+        0 30px 60px rgba(0, 0, 0, 0.5),
+        0 15px 30px rgba(0, 0, 0, 0.4),
+        0 8px 16px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15),
+        inset 0 0 0 1px rgba(253, 107, 37, 0.2);
 }
 
 .browser-header {
@@ -396,7 +417,11 @@ body {
     .browser-mockup {
         width: 700px;
         height: 467px;
-        transform: scale(0.8);
+        transform: perspective(800px) rotateX(2deg) translateY(-6px) scale(0.8);
+    }
+
+    .browser-mockup:hover {
+        transform: perspective(800px) rotateX(4deg) translateY(-9px) scale(0.8);
     }
 
     .tablet-mockup {
@@ -437,7 +462,11 @@ body {
     .browser-mockup {
         width: 450px;
         height: 300px;
-        transform: scale(0.5);
+        transform: perspective(600px) rotateX(1deg) translateY(-4px) scale(0.5);
+    }
+
+    .browser-mockup:hover {
+        transform: perspective(600px) rotateX(3deg) translateY(-6px) scale(0.5);
     }
 
     .browser-mockup .app-mockup {
