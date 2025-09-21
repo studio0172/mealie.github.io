@@ -11,7 +11,8 @@ html {
 body {
     min-height: 100vh;
     background: #000000;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -136,9 +137,9 @@ body {
 }
 
 .hero-text h2 {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    font-size: 52px;
-    font-weight: 100;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    font-weight: 700;
     color: white;
     line-height: 1.1;
     animation: fadeInUp 1s ease-out;
@@ -157,7 +158,7 @@ body {
 
 .hero-text .highlight {
     color: #FD6B25;
-    font-weight: 100;
+    font-weight: 700;
 }
 
 @media (max-width: 768px) {
@@ -220,19 +221,19 @@ body {
 
 .feature-text h2 {
     color: white;
-    font-family: 'GeistSans', sans-serif;
-    font-size: 48px;
-    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
     margin-bottom: 24px;
     line-height: 1.1;
 }
 
 .feature-text p {
     color: #a0a0a8;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.6;
     margin-bottom: 32px;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .feature-list {
@@ -243,9 +244,9 @@ body {
 
 .feature-list li {
     color: #ddd;
-    font-size: 16px;
+    font-size: 14px;
     margin-bottom: 12px;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     display: flex;
     align-items: center;
     gap: 12px;
@@ -323,7 +324,7 @@ body {
     transform: translateX(-50%);
     color: #888;
     font-size: 13px;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .browser-mockup .app-mockup {
@@ -397,7 +398,7 @@ body {
 
 .app-title {
     color: #FD6B25;
-    font-family: 'GeistSans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     font-size: 14px;
 }
@@ -523,7 +524,7 @@ body {
 .app-mockup {
     background: #0a0a0a;
     color: white;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     height: 500px;
     overflow-y: auto;
     padding: 0;
@@ -548,8 +549,9 @@ body {
 
 .recipe-header h1 {
     color: white;
-    font-size: 28px;
-    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    font-weight: 700;
     margin: 0;
     text-align: center;
     flex: 1;
@@ -661,7 +663,8 @@ body {
 
 .recipe-sections h3 {
     color: #FD6B25;
-    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
     margin-bottom: 15px;
     font-weight: 600;
 }
@@ -753,6 +756,7 @@ body {
 
 .meal-plan-header h2 {
     color: white;
+    font-family: 'Montserrat', sans-serif;
     font-size: 20px;
     margin: 0 0 5px 0;
 }
@@ -978,6 +982,7 @@ body {
 
 .grocery-header h2 {
     color: white;
+    font-family: 'Montserrat', sans-serif;
     font-size: 20px;
     margin: 0 0 8px 0;
 }
@@ -1170,7 +1175,6 @@ body {
     height: calc(640px - 50px);
     display: flex;
     flex-direction: column;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 .mobile-mockup .ai-chat-view {
@@ -1198,7 +1202,7 @@ body {
     font-size: 16px;
     margin: 0;
     font-weight: 600;
-    font-family: 'GeistSans', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .mobile-mockup .ai-header h3 {
@@ -1214,7 +1218,6 @@ body {
     border-radius: 10px;
     border: 1px solid rgba(74, 222, 128, 0.2);
     font-weight: 400;
-    font-family: 'Inter', sans-serif;
 }
 
 .mobile-mockup .ai-status {
@@ -1299,7 +1302,6 @@ body {
     color: #ddd;
     position: relative;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    font-family: 'Inter', sans-serif;
     font-weight: 400;
 }
 
@@ -1351,7 +1353,6 @@ body {
     cursor: pointer;
     transition: all 0.2s ease;
     font-weight: 500;
-    font-family: 'Inter', sans-serif;
 }
 
 .suggest-btn:hover {
@@ -1424,7 +1425,6 @@ body {
     font-size: 14px;
     outline: none;
     transition: all 0.2s ease;
-    font-family: 'Inter', sans-serif;
 }
 
 .chat-input input:focus {
@@ -1435,7 +1435,6 @@ body {
 
 .chat-input input::placeholder {
     color: #888;
-    font-family: 'Inter', sans-serif;
 }
 
 .mobile-mockup .chat-input input {
@@ -1495,7 +1494,7 @@ body {
 
 .footer-logo h3 {
     color: #FD6B25;
-    font-family: 'GeistSans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 20px;
     font-weight: 600;
     margin: 0 0 4px 0;
@@ -1504,7 +1503,7 @@ body {
 
 .footer-logo p {
     color: #888;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 14px;
     margin: 0;
     line-height: 1.5;
@@ -1512,7 +1511,7 @@ body {
 
 .footer-status p {
     color: #666;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 14px;
     margin: 0;
 }
