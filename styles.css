@@ -1134,30 +1134,46 @@ body {
 }
 
 
-.ai-mockup {
-    background: #1a1a1a;
-    border-radius: 16px;
-    overflow: hidden;
-    width: 700px;
-    height: 500px;
-    max-width: 100%;
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
-    border: 2px solid #2a2a2a;
+/* AI Chat View for Mobile */
+.ai-chat-view {
+    padding: 0;
+    background: #0a0a0a;
+    height: calc(640px - 50px);
+    display: flex;
+    flex-direction: column;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.mobile-mockup .ai-chat-view {
+    margin: 0 6px 6px 6px;
+    border-radius: 0 0 26px 26px;
 }
 
 .ai-header {
-    background: #2a2a35;
-    padding: 15px 20px;
+    background: #1a1a24;
+    padding: 12px 16px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid rgba(253, 107, 37, 0.1);
+    border-bottom: 1px solid rgba(253, 107, 37, 0.15);
+    flex-shrink: 0;
+}
+
+.mobile-mockup .ai-header {
+    padding: 10px 14px;
+    background: #151520;
 }
 
 .ai-header h3 {
     color: white;
     font-size: 16px;
     margin: 0;
+    font-weight: 600;
+    font-family: 'GeistSans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.mobile-mockup .ai-header h3 {
+    font-size: 14px;
     font-weight: 600;
 }
 
@@ -1167,25 +1183,60 @@ body {
     background: rgba(74, 222, 128, 0.1);
     padding: 4px 8px;
     border-radius: 10px;
+    border: 1px solid rgba(74, 222, 128, 0.2);
+    font-weight: 400;
+    font-family: 'Inter', sans-serif;
+}
+
+.mobile-mockup .ai-status {
+    font-size: 10px;
+    padding: 3px 6px;
+    font-weight: 400;
 }
 
 .chat-messages {
-    padding: 20px;
-    height: calc(500px - 120px);
+    padding: 16px;
+    flex: 1;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 16px;
+}
+
+.mobile-mockup .chat-messages {
+    padding: 12px;
+    gap: 12px;
 }
 
 .message {
     display: flex;
     gap: 12px;
     align-items: flex-start;
+    animation: slideInUp 0.3s ease;
+    width: 100%;
 }
 
 .message.user {
-    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
+
+.message.ai {
+    justify-content: flex-start;
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.mobile-mockup .message {
+    gap: 8px;
 }
 
 .avatar {
@@ -1198,32 +1249,65 @@ body {
     justify-content: center;
     font-size: 14px;
     flex-shrink: 0;
+    border: 1px solid rgba(253, 107, 37, 0.2);
+}
+
+.mobile-mockup .avatar {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
 }
 
 .message-content {
     background: rgba(255, 255, 255, 0.05);
     padding: 12px 15px;
-    border-radius: 12px;
+    border-radius: 16px;
     max-width: 70%;
     font-size: 14px;
     line-height: 1.4;
     color: #ddd;
+    position: relative;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
 }
 
 .message.user .message-content {
-    background: rgba(253, 107, 37, 0.1);
+    background: linear-gradient(135deg, rgba(253, 107, 37, 0.15), rgba(253, 107, 37, 0.08));
     color: white;
-    border: 1px solid rgba(253, 107, 37, 0.2);
+    border: 1px solid rgba(253, 107, 37, 0.25);
+    border-radius: 16px 4px 16px 16px;
+    margin-left: auto;
 }
 
 .message.ai .message-content {
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 4px 16px 16px 16px;
+    margin-right: auto;
+}
+
+.mobile-mockup .message-content {
+    padding: 10px 12px;
+    font-size: 13px;
+    max-width: 75%;
+    border-radius: 14px;
+    line-height: 1.4;
+}
+
+.mobile-mockup .message.user .message-content {
+    border-radius: 14px 4px 14px 14px;
+}
+
+.mobile-mockup .message.ai .message-content {
+    border-radius: 4px 14px 14px 14px;
 }
 
 .suggestion-buttons {
     display: flex;
     gap: 8px;
-    margin-top: 10px;
+    margin-top: 12px;
+    flex-wrap: wrap;
 }
 
 .suggest-btn {
@@ -1234,6 +1318,21 @@ body {
     border-radius: 6px;
     font-size: 11px;
     cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+}
+
+.suggest-btn:hover {
+    background: rgba(253, 107, 37, 0.2);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(253, 107, 37, 0.2);
+}
+
+.mobile-mockup .suggest-btn {
+    padding: 6px 10px;
+    font-size: 11px;
+    border-radius: 6px;
 }
 
 .typing-indicator {
@@ -1270,12 +1369,18 @@ body {
 }
 
 .chat-input {
-    background: #2a2a35;
-    padding: 15px 20px;
+    background: #1a1a24;
+    padding: 12px 16px;
     display: flex;
     gap: 10px;
     align-items: center;
-    border-top: 1px solid rgba(253, 107, 37, 0.1);
+    border-top: 1px solid rgba(253, 107, 37, 0.15);
+    flex-shrink: 0;
+}
+
+.mobile-mockup .chat-input {
+    padding: 10px 14px;
+    background: #151520;
 }
 
 .chat-input input {
@@ -1287,24 +1392,57 @@ body {
     color: white;
     font-size: 14px;
     outline: none;
+    transition: all 0.2s ease;
+    font-family: 'Inter', sans-serif;
 }
 
 .chat-input input:focus {
     border-color: #FD6B25;
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 0 2px rgba(253, 107, 37, 0.1);
+}
+
+.chat-input input::placeholder {
+    color: #888;
+    font-family: 'Inter', sans-serif;
+}
+
+.mobile-mockup .chat-input input {
+    padding: 10px 15px;
+    font-size: 14px;
+    border-radius: 20px;
 }
 
 .chat-input button {
     background: #FD6B25;
     border: none;
     color: white;
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
     cursor: pointer;
     font-size: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 8px rgba(253, 107, 37, 0.3);
+}
+
+.chat-input button:hover {
+    background: #E55A1F;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(253, 107, 37, 0.4);
+}
+
+.chat-input button:active {
+    transform: scale(0.95);
+}
+
+.mobile-mockup .chat-input button {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
 }
 
 /* Mobile Responsive for App Mockups */
