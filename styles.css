@@ -19,7 +19,7 @@ body {
 
 .floating-header {
     position: fixed;
-    top: 30px;
+    top: -100px; /* Initially off-screen */
     left: 50%;
     transform: translateX(-50%);
     width: 90%;
@@ -30,6 +30,11 @@ body {
     padding: 15px 40px;
     z-index: 1000;
     will-change: transform;
+    transition: top 0.5s ease-in-out; /* Smooth transition for sliding in */
+}
+
+.floating-header.is-scrolled {
+    top: 30px; /* Position when scrolled */
 }
 
 .header-container {
@@ -136,6 +141,18 @@ body {
     font-weight: 100;
     color: white;
     line-height: 1.1;
+    animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .hero-text .highlight {
@@ -174,6 +191,13 @@ body {
     padding: 80px 5%;
     background: linear-gradient(180deg, #000000 0%, #0a0a0a 100%);
     position: relative;
+    opacity: 0;
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.feature-section.is-visible {
+    opacity: 1;
+    transform: translateY(-20px);
 }
 
 .feature-content {
