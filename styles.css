@@ -5,7 +5,19 @@
 }
 
 html {
-    scroll-behavior: auto;
+    scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .feature-section {
+        transition: none;
+        opacity: 1;
+        transform: none;
+    }
 }
 
 body {
@@ -20,7 +32,7 @@ body {
 
 .floating-header {
     position: fixed;
-    top: -100px; /* Initially off-screen */
+    top: 30px;
     left: 50%;
     transform: translateX(-50%);
     width: 90%;
@@ -30,8 +42,6 @@ body {
     border-radius: 16px;
     padding: 15px 40px;
     z-index: 1000;
-    will-change: transform;
-    transition: top 0.5s ease-in-out; /* Smooth transition for sliding in */
 }
 
 .floating-header.is-scrolled {
@@ -193,12 +203,14 @@ body {
     background: linear-gradient(180deg, #000000 0%, #0a0a0a 100%);
     position: relative;
     opacity: 0;
-    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    will-change: opacity, transform;
 }
 
 .feature-section.is-visible {
     opacity: 1;
-    transform: translateY(-20px);
+    transform: none;
 }
 
 .feature-content {
@@ -256,8 +268,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    perspective: 1200px;
-    transform-style: preserve-3d;
+    perspective: 1000px;
 }
 
 /* Desktop/Browser Mockup */
@@ -526,10 +537,8 @@ body {
     color: white;
     font-family: 'Open Sans', sans-serif;
     height: 500px;
-    overflow-y: auto;
+    overflow: hidden;
     padding: 0;
-    -webkit-overflow-scrolling: touch;
-    scroll-behavior: auto;
 }
 
 /* Recipe View Mockup */
@@ -770,11 +779,10 @@ body {
     display: flex;
     gap: 12px;
     margin-bottom: 20px;
-    overflow-x: auto;
+    overflow: hidden;
     scrollbar-width: none;
     -ms-overflow-style: none;
     padding: 0 5px;
-    -webkit-overflow-scrolling: touch;
 }
 
 .calendar-grid::-webkit-scrollbar {
@@ -1229,12 +1237,10 @@ body {
 .chat-messages {
     padding: 16px;
     flex: 1;
-    overflow-y: auto;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     gap: 16px;
-    -webkit-overflow-scrolling: touch;
-    scroll-behavior: auto;
 }
 
 .mobile-mockup .chat-messages {
